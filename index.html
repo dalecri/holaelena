@@ -126,7 +126,7 @@ document.querySelectorAll('[data-lang-btn]').forEach(function (b) {
     "  .-~~~~-.  ",
     " (________) "
   ];
-  var ROWS = 19, LH = 15, FS = 13;
+  var ROWS = 11, LH = 14, FS = 13;
   var COLS = 80, CW = 8, dpr = 1;
   function resize() {
     dpr = Math.min(2, window.devicePixelRatio || 1);
@@ -142,8 +142,8 @@ document.querySelectorAll('[data-lang-btn]').forEach(function (b) {
     ctx.textBaseline = 'top';
   }
   var clouds = [
-    { x: 0.08, y: 10, v: 0.9 }, { x: 0.38, y: 15, v: 0.6 }, { x: 0.62, y: 11, v: 1.2 },
-    { x: 0.83, y: 14, v: 0.8 }, { x: 0.24, y: 16, v: 0.5 }, { x: 0.55, y: 12, v: 1.0 }
+    { x: 0.08, y: 5, v: 0.9 }, { x: 0.38, y: 8, v: 0.6 }, { x: 0.62, y: 6, v: 1.2 },
+    { x: 0.83, y: 9, v: 0.8 }
   ];
   function land(lat, lon) {
     lon = ((lon + 180) % 360 + 360) % 360 - 180;
@@ -165,8 +165,8 @@ document.querySelectorAll('[data-lang-btn]').forEach(function (b) {
       }
     }
     // globe
-    var cx = COLS / 2, cy = 8;
-    var RX = Math.max(16, Math.min(26, Math.floor(COLS * 0.26))), RY = Math.round(RX / 2.2);
+    var cx = COLS / 2, cy = 3;
+    var RX = Math.max(13, Math.min(15, Math.floor(COLS * 0.11))), RY = 3;
     var rot = 115 + tsec * 5;
     for (var gy = Math.floor(cy - RY); gy <= cy; gy++) {
       if (gy < 0 || gy >= ROWS) continue;
@@ -180,10 +180,13 @@ document.querySelectorAll('[data-lang-btn]').forEach(function (b) {
         else if (z > 0.35) { ch[gy][gx] = '\u00B7'; cl[gy][gx] = SEA; }
       }
     }
+    for (var ex = Math.floor(cx - RX) - 1; ex <= cx + RX + 1; ex++) {
+      if (ex >= 0 && ex < COLS && ch[cy + 1][ex] === ' ') { ch[cy + 1][ex] = '\u2500'; cl[cy + 1][ex] = SEA; }
+    }
     // plane + contrail
     var span = COLS + 56;
     var px = Math.floor(-20 + (still ? span * 0.42 : (tsec * 7) % span));
-    var py = 13 + Math.round(Math.sin(tsec * 0.9) * 1);
+    var py = 6 + (Math.sin(tsec * 0.9) > 0.4 ? 1 : 0);
     for (var k = 0; k < 6; k++) {
       var tx = px - 2 - k * 2, ty = py + 2;
       if (tx >= 0 && tx < COLS && ty >= 0 && ty < ROWS && ch[ty][tx] === ' ') { ch[ty][tx] = '\u00B7'; cl[ty][tx] = SEA; }
