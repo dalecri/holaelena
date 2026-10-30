@@ -19,7 +19,7 @@
 <g transform="translate(17 145)"><circle class="node" r="6"/><text x="30" y="5" class="map-code">YYZ</text><text x="30" y="37" class="map-city">Toronto</text><text x="30" y="60" class="map-chapter">Food service</text></g>
 <g transform="translate(17 245)"><circle class="node" r="6"/><text x="30" y="5" class="map-code">YOW</text><text x="30" y="37" class="map-city">Ottawa</text><text x="30" y="60" class="map-chapter">Food service · Inflight services</text><text x="30" y="78" class="map-chapter">Product development · Charter sales</text></g>
 <g transform="translate(17 365)"><circle class="node" r="9"/><circle class="node-core" r="3"/><text x="30" y="5" class="map-code">YUL</text><text x="30" y="37" class="map-city">Montreal</text><text x="30" y="60" class="map-chapter">Strategic procurement</text></g></svg></figure>
-<section class="sky" role="img" aria-label="ASCII animation: an aeroplane flying through clouds above a slowly rotating globe"><canvas id="skyScene" aria-hidden="true"></canvas></section>
+<section class="sky" role="img" aria-label="ASCII animation: the top half of a slowly rotating globe, with an aeroplane flying through clouds below it"><canvas id="skyScene" aria-hidden="true"></canvas></section>
 <section class="intro" aria-label="About Elena"><p class="languages">Fluent English · Fluent Spanish · Intermediate French</p><p class="opening">I am a dynamic, proactive, and resourceful professional with strong analytical, project planning, and financial management skills, and deep experience in buying and negotiations. My customer-service orientation is built on client retention and account management. I have a proven ability to build rapport with clients, colleagues, and senior leaders in fast-paced, target-driven environments.</p></section>
 <ul class="strengths" aria-label="Strengths"><li>Buying &amp; Negotiations</li><li>Account Management &amp; Retention</li><li>Team Leadership</li><li>Financial Management</li><li>Project Planning</li><li>Client Relations</li></ul>
 <ol class="itinerary" aria-label="Professional experience"><li class="leg" id="role-1"><span class="city-tag">YUL</span><article><div class="leg-top"><p class="dates">Apr 2023 – Present</p><span class="present">Present</span></div><h2>Manager of Strategic Procurement</h2><p class="employer">Air Canada</p><p class="meta">Contract full-time · Montreal Dorval, hybrid</p></article></li><li class="leg" id="role-2"><span class="city-tag">YOW</span><article><div class="leg-top"><p class="dates">Aug 2021 – Present</p><span class="present">Present</span></div><h2>Charter Sales Advisor</h2><p class="employer">Canadian North Airlines (merged with First Air)</p><p class="meta">Permanent full-time · Ottawa</p><p class="description">Builds, strengthens, and grows corporate customer relationships with a focus on revenue growth and service delivery enhancement; works collaboratively with Business Development Managers and the Charters, Commercial, Cargo, Marketing, Flight Operations, and Finance departments as the single point of contact for assigned key customers.</p></article></li><li class="leg" id="role-3"><span class="city-tag">YOW</span><article><div class="leg-top"><p class="dates">May 2018 – Jul 2021</p></div><h2>Senior Manager, Product Development and Sales</h2><p class="employer">First Air</p><p class="meta">Greater Ottawa</p><p class="description">Built, strengthened, and grew corporate customer relationships with a focus on revenue growth and service delivery enhancement.</p></article></li><li class="leg" id="role-4"><span class="city-tag">YOW</span><article><div class="leg-top"><p class="dates">Apr 2013 – May 2018</p></div><h2>Inflight Service and Ancillary Revenue Manager</h2><p class="employer">First Air</p><p class="meta">Ottawa</p><p class="description">Responsible for the design of new airline services and products; coordinated and directed contract negotiations with suppliers; developed and supervised supplier contracts; created and delivered marketing and ancillary programs; held financial and operational management of the airline’s Inflight Service; coordinated catering and commissary for national and international flights; maintained solid relationships with key internal and external teams (Flight Operations, Marketing and Sales, Transport Canada, Health Canada).</p></article></li><li class="leg" id="role-5"><span class="city-tag">YOW</span><article><div class="leg-top"><p class="dates">2010 – 2013</p></div><h2>Director, Multi-Unit Hotel Food Service</h2><p class="employer">Sodexo</p><p class="meta">Ottawa</p><p class="description">Managed finance and operations for food services at the Marriott Residence Inn and Indigo Hotel, including supervising 25 employees in a unionized environment, coordinating all aspects of restaurant and catering sales, and managing services for up to 400 guests. Fostered strong client relationships, leading to 100% customer satisfaction for 2 consecutive years. Maintained over 98% compliance in Marriott corporate customer service and safety standards audits.</p></article></li><li class="leg" id="role-6"><span class="city-tag">MEX</span><article><div class="leg-top"><p class="dates">2001 – 2010</p></div><h2>Regional Manager</h2><p class="employer">Compass Group</p><p class="meta">Mexico</p><p class="description">Led a team of 300 employees coordinating services for key corporate accounts (over 15,000 customers per day); managed all aspects of sales, business development, and compliance standards for foodservice. Conducted competitive, analytical research to develop and introduce new foodservice concepts focused on stronger nutritional offerings. Achieved a 15% retention increase and regularly transformed business losses into profitable accounts.</p></article></li><li class="leg" id="role-7"><span class="city-tag">YYZ</span><article><div class="leg-top"><p class="dates">1999 – 2000</p></div><h2>Director, Food Service</h2><p class="employer">Sodexo</p><p class="meta">Greater Toronto Area</p></article></li><li class="leg" id="role-8"><span class="city-tag">MEX</span><article><div class="leg-top"><p class="dates">1992 – 1999</p></div><h2>Manager, Passenger Experience Services</h2><p class="employer">Aeromexico</p><p class="meta">Mexico City</p></article></li><li class="leg" id="role-9"><span class="city-tag">MEX</span><article><div class="leg-top"><p class="dates">1991 – 1993</p></div><h2>Nutrition Coordinator</h2><p class="employer">National Sports Commission, Mexico</p><p class="meta">Mexico City</p></article></li></ol>
@@ -93,7 +93,7 @@
     "  .-~~~~-.  ",
     " (________) "
   ];
-  var ROWS = 34, LH = 15, FS = 13;
+  var ROWS = 19, LH = 15, FS = 13;
   var COLS = 80, CW = 8, dpr = 1;
   function resize() {
     dpr = Math.min(2, window.devicePixelRatio || 1);
@@ -109,8 +109,8 @@
     ctx.textBaseline = 'top';
   }
   var clouds = [
-    { x: 0.08, y: 2, v: 0.9 }, { x: 0.38, y: 6, v: 0.6 }, { x: 0.62, y: 1, v: 1.2 },
-    { x: 0.83, y: 5, v: 0.8 }, { x: 0.24, y: 9, v: 0.5 }, { x: 0.55, y: 10, v: 1.0 }
+    { x: 0.08, y: 10, v: 0.9 }, { x: 0.38, y: 15, v: 0.6 }, { x: 0.62, y: 11, v: 1.2 },
+    { x: 0.83, y: 14, v: 0.8 }, { x: 0.24, y: 16, v: 0.5 }, { x: 0.55, y: 12, v: 1.0 }
   ];
   function land(lat, lon) {
     lon = ((lon + 180) % 360 + 360) % 360 - 180;
@@ -132,10 +132,10 @@
       }
     }
     // globe
-    var cx = COLS / 2, cy = 22.5;
-    var RX = Math.max(15, Math.min(24, Math.floor(COLS * 0.22))), RY = Math.round(RX * 0.47);
+    var cx = COLS / 2, cy = 8;
+    var RX = Math.max(16, Math.min(26, Math.floor(COLS * 0.26))), RY = Math.round(RX / 2.2);
     var rot = 115 + tsec * 5;
-    for (var gy = Math.floor(cy - RY); gy <= cy + RY; gy++) {
+    for (var gy = Math.floor(cy - RY); gy <= cy; gy++) {
       if (gy < 0 || gy >= ROWS) continue;
       for (var gx = Math.floor(cx - RX); gx <= cx + RX; gx++) {
         var nx = (gx - cx) / RX, ny = (gy - cy) / RY, d = nx * nx + ny * ny;
@@ -150,7 +150,7 @@
     // plane + contrail
     var span = COLS + 56;
     var px = Math.floor(-20 + (still ? span * 0.42 : (tsec * 7) % span));
-    var py = 4 + Math.round(Math.sin(tsec * 0.9) * 1);
+    var py = 13 + Math.round(Math.sin(tsec * 0.9) * 1);
     for (var k = 0; k < 6; k++) {
       var tx = px - 2 - k * 2, ty = py + 2;
       if (tx >= 0 && tx < COLS && ty >= 0 && ty < ROWS && ch[ty][tx] === ' ') { ch[ty][tx] = '\u00B7'; cl[ty][tx] = SEA; }
@@ -161,6 +161,11 @@
       var c0 = clouds[ci];
       var wx = still ? Math.floor(c0.x * COLS) : Math.floor(((c0.x * COLS - tsec * c0.v) % (COLS + 18)) + (COLS + 18)) % (COLS + 18) - 14;
       stamp(CLOUD, wx, c0.y, CLD);
+    }
+    // a gentle waterline along the bottom
+    var wy = ROWS - 1, woff = Math.floor(tsec * 2);
+    for (var wx2 = 0; wx2 < COLS; wx2++) {
+      if ((wx2 + woff) % 3 !== 2 && ch[wy][wx2] === ' ') { ch[wy][wx2] = '~'; cl[wy][wx2] = SEA; }
     }
     // paint
     ctx.clearRect(0, 0, COLS * CW, ROWS * LH);
